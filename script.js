@@ -10,7 +10,7 @@ document.addEventListener('goalEvent', (obj) => {
 function updateGoalContent(detail) {
     const percent = (((detail.amount.current + 75) / detail.amount.target) * 100).toFixed(2);
 
-    var montant = parseFloat(detail.amount.current) + 75;
+    var montant = (parseFloat(detail.amount.current) + 75).toLocaleString("fr-FR");
     document.getElementById('current-amount').textContent = montant + " €";
     document.getElementById('goal-title').textContent = detail.title;
     let value = Number(detail.amount.target);
